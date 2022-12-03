@@ -29,7 +29,7 @@ def dna_hybr(
     :param conc_salt: Salt concentration in mM
     :param conc_mg: Mg2+ concentration in mM
     :param temp: Temperature of solution,ºC
-    :param tm_parameter: Tm / H / S / G / all (Default = all)
+    :param tm_parameter: 'Tm' / 'H' / 'S' / 'G' / 'all' (Default = 'all')
     :param unit: kcal / cal unit of parameter (Default = kcal)
     :return:
     """
