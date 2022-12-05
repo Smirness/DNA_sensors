@@ -56,13 +56,19 @@ def dna_hybr(
              }
 
     # printing
+    result = []
     if tm_parameter == 'all':
-        print('Tm = %s ºC' % round(Tm, 2))
-        print('dG = %s %s' % (round(G, 2), unit))
-        print('dH = %s %s' % (round(H, 2), unit))
-        print('dS = %s cal/mol/K' % round(S, 2))
+        result.append('Tm = %s ºC;' % round(Tm, 2))
+        result.append('dG = %s %s;' % (round(G, 2), unit))
+        result.append('dH = %s %s;' % (round(H, 2), unit))
+        result.append('dS = %s cal/mol/K;' % round(S, 2))
     else:
-        print(round(param[tm_parameter], 2))
+        result.append(round(param[tm_parameter], 2))
+
+    print(result)
+    return result
+
+
 
 
 def tm_Base_Stacking(
@@ -149,6 +155,7 @@ def tm_Base_Stacking(
     H = round(H, 2)
     S = round(S, 2)
 
+
     return Tm, H, S
 
-# dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'G', 'cal')
+dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'all', 'cal')
