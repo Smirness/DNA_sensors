@@ -63,7 +63,7 @@ def dna_hybr(
         result.append('dH = %s %s;' % (round(H, 2), unit))
         result.append('dS = %s cal/mol/K;' % round(S, 2))
     else:
-        result.append(round(param[tm_parameter], 2))
+        result = round(param[tm_parameter], 2)
 
     print(result)
     return result
@@ -158,4 +158,4 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'all', 'cal')
+# dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'all', 'cal')
