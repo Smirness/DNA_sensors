@@ -1,5 +1,6 @@
 import math
 
+
 # The code core, tm_Base_Stacking function, was taken from https://github.com/luksgrin/TmBioPHP-python.git
 # luksgrin's noties:
 # Based on Joseba Bikandi's work
@@ -33,10 +34,11 @@ def dna_hybr(
     :param unit: kcal / cal unit of parameter (Default = kcal)
     :return:
     """
+    primer_seq = primer_seq.upper()
     # Dict for selecting number of unit
-    Measurement = {'kcal': 1e-3,
+    measurement = {'kcal': 1e-3,
                    'cal': 1}
-    nunit = Measurement[unit]
+    nunit = measurement[unit]
 
     # Determine parameters
     Tm, H, S = tm_Base_Stacking(primer_seq, conc_primer, conc_salt, conc_mg)
@@ -51,7 +53,7 @@ def dna_hybr(
              'H': H,
              'S': S,
              'G': G,
-    }
+             }
 
     # printing
     if tm_parameter == 'all':
@@ -61,6 +63,7 @@ def dna_hybr(
         print('dS = %s cal/mol/K' % round(S, 2))
     else:
         print(round(param[tm_parameter], 2))
+
 
 def tm_Base_Stacking(
         primer_seq,  # Primer sequence only containing ATGC
@@ -148,4 +151,4 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-# dna_hybr('TTCTACTAATACTTTAGC', 20, 215, 100, 37, 'G', 'cal')
+# dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'G', 'cal')
