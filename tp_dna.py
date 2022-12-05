@@ -65,7 +65,6 @@ def dna_hybr(
     else:
         result = round(param[tm_parameter], 2)
 
-    print(result)
     return result
 
 
