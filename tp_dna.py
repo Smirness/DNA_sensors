@@ -40,7 +40,7 @@ def dna_hybr(
 
     for nt in primer_seq:
         if nt not in ['A', 'T', 'C', 'G', 'a', 't', 'c', 'g']:
-            sys.exit()
+            sys.exit(0)
 
     primer_seq = primer_seq.upper()
     # Dict for selecting number of unit
@@ -164,5 +164,5 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-print(dna_hybr('r', 20, 215, 100, 37, 'all', 'kcal'))
+# print(dna_hybr('r', 20, 215, 100, 37, 'all', 'kcal'))
 # print(np.NAN)
