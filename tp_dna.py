@@ -1,4 +1,5 @@
 import math
+import sys
 
 
 # The code core, tm_Base_Stacking function, was taken from https://github.com/luksgrin/TmBioPHP-python.git
@@ -35,7 +36,7 @@ def dna_hybr(
     :return:
     """
     if not primer_seq:
-        exit()
+        sys.exit(0)
 
     primer_seq = primer_seq.upper()
     # Dict for selecting number of unit
