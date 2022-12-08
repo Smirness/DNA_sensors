@@ -34,6 +34,9 @@ def dna_hybr(
     :param unit: 'kcal' / 'cal' unit of parameter (Default = 'kcal')
     :return:
     """
+    if not primer_seq:
+        exit()
+
     primer_seq = primer_seq.upper()
     # Dict for selecting number of unit
     measurement = {'kcal': 1e-3,
@@ -154,7 +157,6 @@ def tm_Base_Stacking(
     H = round(H, 2)
     S = round(S, 2)
 
-
     return Tm, H, S
 
-# dna_hybr('ttCTACTAATACTTTAGC', 20, 215, 100, 37, 'all', 'cal')
+print(dna_hybr('', 20, 215, 100, 37, 'all', 'cal'))
