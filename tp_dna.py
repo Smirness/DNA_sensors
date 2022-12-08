@@ -1,6 +1,8 @@
 import math
 import sys
 
+import numpy as np
+
 
 # The code core, tm_Base_Stacking function, was taken from https://github.com/luksgrin/TmBioPHP-python.git
 # luksgrin's noties:
@@ -35,7 +37,7 @@ def dna_hybr(
     :param unit: 'kcal' / 'cal' unit of parameter (Default = 'kcal')
     :return:
     """
-    if not primer_seq:
+    if not primer_seq or primer_seq is np.nan:
         sys.exit(0)
 
     primer_seq = primer_seq.upper()
@@ -160,4 +162,4 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-#print(dna_hybr('', 20, 215, 100, 37, 'all', 'cal'))
+print(dna_hybr('', 20, 215, 100, 37, 'Tm', 'cal'))
