@@ -37,8 +37,10 @@ def dna_hybr(
     :param unit: 'kcal' / 'cal' unit of parameter (Default = 'kcal')
     :return:
     """
-    if not primer_seq or primer_seq is np.nan:
-        sys.exit(0)
+
+    for nt in primer_seq:
+        if nt not in ['A', 'T', 'C', 'G', 'a', 't', 'c', 'g']:
+            sys.exit()
 
     primer_seq = primer_seq.upper()
     # Dict for selecting number of unit
@@ -162,5 +164,5 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-# print(dna_hybr(np.NAN, 20, 215, 100, 37, 'H', 'cal'))
+print(dna_hybr('r', 20, 215, 100, 37, 'all', 'kcal'))
 # print(np.NAN)
