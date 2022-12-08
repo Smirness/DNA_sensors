@@ -160,4 +160,4 @@ def tm_Base_Stacking(
 
     return Tm, H, S
 
-print(dna_hybr('', 20, 215, 100, 37, 'all', 'cal'))
+#print(dna_hybr('', 20, 215, 100, 37, 'all', 'cal'))
