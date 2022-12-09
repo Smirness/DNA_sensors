@@ -11,20 +11,23 @@ def tc2n(text):
       '': 1e-9,
     }
 
-    ## Using regular expression
-    # pat_num = '\d+[\.\,]*\d*'
-    # pat_unit = '[a-zA-Z]+'
-    #
-    # num = re.findall(pat_num, text)
-    # num = int(num[0])
-    # unit = re.findall(pat_unit, text)
-    # unit = unit[0]
+    # Using regular expression
+    pat_num = '\d+[\.\,]*\d*'
+    pat_unit = '[a-zA-Z]+'
 
-    # fast way
-    try:
-        num, unit = text.split(' ')
-    except ValueError:
-        num, unit = text, ''
+    num = re.findall(pat_num, text)
+    num = int(num[0])
+    unit = re.findall(pat_unit, text)
+    if unit:
+        unit = unit[0]
+    else:
+        unit = ''
+
+    # # fast way
+    # try:
+    #     num, unit = text.split(' ')
+    # except ValueError:
+    #     num, unit = text, ''
 
     num = float(num)
 
@@ -43,20 +46,23 @@ def tt2n(text):
      's': 3600,
     }
 
-    ## Using regular expression
-    # pat_num = '\d+[\.\,]*\d*'
-    # pat_unit = '[a-zA-Z]+'
-    #
-    # num = re.findall(pat_num, text)
-    # num = int(num[0])
-    # unit = re.findall(pat_unit, text)
-    # unit = unit[0]
+    # Using regular expression
+    pat_num = '\d+[\.\,]*\d*'
+    pat_unit = '[a-zA-Z]+'
 
-    # fast way
-    try:
-        num, unit = text.split(' ')
-    except ValueError:
-        num, unit = text, ''
+    num = re.findall(pat_num, text)
+    num = int(num[0])
+    unit = re.findall(pat_unit, text)
+    if unit:
+        unit = unit[0]
+    else:
+        unit = ''
+
+    # # fast way
+    # try:
+    #     num, unit = text.split(' ')
+    # except ValueError:
+    #     num, unit = text, ''
 
     num = float(num)
 
@@ -65,5 +71,5 @@ def tt2n(text):
 
     return num
 
-# print(tc2n('1 '))
-# print(tt2n('1'))
+print(tc2n('1'))
+print(tt2n('1'))
