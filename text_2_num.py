@@ -8,6 +8,7 @@ def tc2n(text):
      'mM': 1e-3,
      'uM': 1e-6,
      'nM': 1e-9,
+      '': 1e-9,
     }
 
     ## Using regular expression
@@ -20,7 +21,11 @@ def tc2n(text):
     # unit = unit[0]
 
     # fast way
-    num, unit = text.split(' ')
+    try:
+        num, unit = text.split(' ')
+    except ValueError:
+        num, unit = text, ''
+
     num = float(num)
 
     unit = dict[unit]
@@ -60,5 +65,5 @@ def tt2n(text):
 
     return num
 
-# print(tc2n('10 nM'))
-print(tt2n('1'))
+# print(tc2n('1 '))
+# print(tt2n('1'))
