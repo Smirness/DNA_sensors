@@ -1,13 +1,14 @@
 import sys
 
-def gc(primer_seq):
+def gc(seq):
     """Calculate GC share in NA sequence"""
 
-    for nt in primer_seq:
-        if nt not in ['A', 'T', 'C', 'G', 'a', 't', 'c', 'g']:
+    # checking corrected writing DNA/RNA seq
+    for nt in seq:
+        if nt not in ['A', 'T', 'U', 'C', 'G', 'a', 't', 'u', 'c', 'g']:
             sys.exit(0)
 
-    seq = primer_seq.upper()
+    seq = seq.upper()
     gc = ((seq.count("G") + seq.count("C")) / len(seq)) * 100
 
     return gc
