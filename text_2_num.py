@@ -3,6 +3,10 @@ import sys
 
 def tc2n(text):
     """transformation text concentration to number. Transform to molarity"""
+
+    if not text:
+        sys.out(0)
+
     dict = {
      'M': 1,
      'mM': 1e-3,
