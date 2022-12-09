@@ -32,6 +32,7 @@ def tc2n(text):
 def tt2n(text):
     """transformation text time to number. Transform to hours"""
     dict = {
+     '': 1,
      'h': 1,
      'm': 60,
      's': 3600,
@@ -47,7 +48,11 @@ def tt2n(text):
     # unit = unit[0]
 
     # fast way
-    num, unit = text.split(' ')
+    try:
+        num, unit = text.split(' ')
+    except ValueError:
+        num, unit = text, ''
+
     num = float(num)
 
     unit = dict[unit]
@@ -56,4 +61,4 @@ def tt2n(text):
     return num
 
 # print(tc2n('10 nM'))
-# print(tt2n('50 m'))
+print(tt2n('1'))
