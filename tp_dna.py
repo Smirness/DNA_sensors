@@ -76,8 +76,6 @@ def dna_hybr(
     return result
 
 
-
-
 def tm_Base_Stacking(
         primer_seq,  # Primer sequence only containing ATGC
         conc_primer,  # Primer concentration in nM
