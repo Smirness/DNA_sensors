@@ -65,7 +65,7 @@ usage: DNsorder [-h] -a ANALYTE [-p POSITION] [-l1 LEN_ARM1] [-l2 LEN_ARM2] [-l3
                 [-c_m CONC_MG] [-t TEMP] [-o OUTPUT] -s SAVE [-version]
 
 ```
-The meaning of each flag is described in the section **"Input parameters"**.
+The meaning of each flag is described in the section **"Input parameters"**.\
 The second way is more convenient. You create a command in a separate file and run it. 
 1) Create a file with the extension **.sh**
 2) First line, write shebang `#!/bin/bash`
