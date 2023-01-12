@@ -104,7 +104,7 @@ To display correctly, divide the rows into columns and select the delimiter char
 ## Comments
 If you want to change scaffold sequence. I need to open `core/Class.py` and 
 rewrite sequence in "scaffold" dictionary of class Dnsorder (Figure 2).\
-![img.png](images/img_1.png)
+![img.png](images/img_1.png)\
 Figure 2 - screenshot of `core/Class.py` file where you can to replace scaffold sequence. 
 
 ## Future Update
