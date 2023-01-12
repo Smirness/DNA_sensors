@@ -51,7 +51,7 @@ DNA sensor arms and thermodynamic parameters (*more information in the section
 | temperature      | temperature of solution, ºC            | -                                                         |
 
 ## Installation
-Download the entire repository into a separate folder on your laptop.
+Download the whole folder into a separate folder on your laptop.
 ## Running
 There are two ways to run the program. \
 The first is to go to the folder where **DNsorder.py** file is and run it with the bellow command through the Linux command line.
