@@ -1,9 +1,6 @@
 import math
 import sys
 
-import numpy as np
-
-
 # The code core, tm_Base_Stacking function, was taken from https://github.com/luksgrin/TmBioPHP-python.git
 # luksgrin's noties:
 # Based on Joseba Bikandi's work
@@ -27,7 +24,6 @@ def dna_hybr(
         tm_parameter='all',
         unit='kcal'):
     """
-
     :param primer_seq: Primer sequence only containing ATGC
     :param conc_primer: Primer concentration in nM
     :param conc_salt: Salt concentration in mM
@@ -37,6 +33,11 @@ def dna_hybr(
     :param unit: 'kcal' / 'cal' unit of parameter (Default = 'kcal')
     :return:
     """
+
+    conc_primer = int(conc_primer)
+    conc_salt = int(conc_salt)
+    conc_mg = int(conc_mg)
+    temp = int(temp)
 
     for nt in primer_seq:
         if nt not in ['A', 'T', 'C', 'G', 'a', 't', 'c', 'g']:
@@ -60,23 +61,21 @@ def dna_hybr(
     param = {'Tm': Tm,
              'H': H,
              'S': S,
-             'G': G,
-             }
+             'G': G,}
 
     # printing
     result = []
-    if tm_parameter == 'all':
+    if tm_parameter == 'all_text':
         result.append('Tm = %s ºC;' % round(Tm, 2))
         result.append('dG = %s %s;' % (round(G, 2), unit))
         result.append('dH = %s %s;' % (round(H, 2), unit))
         result.append('dS = %s cal/mol/K;' % round(S, 2))
+    elif tm_parameter == 'all':
+        result = round(param['Tm'], 2), round(param['G'], 2), round(param['H'], 2), round(param['S'], 2)
     else:
         result = round(param[tm_parameter], 2)
 
     return result
-
-
-
 
 def tm_Base_Stacking(
         primer_seq,  # Primer sequence only containing ATGC
@@ -86,6 +85,9 @@ def tm_Base_Stacking(
 
     H = 0
     S = 0
+    conc_primer = int(conc_primer)
+    conc_salt = int(conc_salt)
+    conc_mg = int(conc_mg)
 
     # from table at http://www.ncbi.nlm.nih.gov/pmc/articles/PMC19045/table/T2/ (SantaLucia, 1998)
     # enthalpy values

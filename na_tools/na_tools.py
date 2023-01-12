@@ -33,7 +33,7 @@ def complement(sequence):
             'G': 'C',
             'g': 'c',
         }
-        result =''
+        result = ''
         for nt in sequence:
             result += complement_dict[nt]
         return result
@@ -46,7 +46,7 @@ def reverse_complement(sequence):
     if check_seq(sequence) == True:
         result = ''
         for nt in sequence:
-            result += complement[nt]
+            result += complement(nt)
         return result[::-1]
 
 def check_seq(sequence):
@@ -65,5 +65,5 @@ def check_seq(sequence):
 
     return check_seq
 
-sequence = 'ATCG'
-print(transcribe(sequence))
+# sequence = 'ATCG'
+# print(reverse_complement(sequence))
